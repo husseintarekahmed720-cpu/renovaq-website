@@ -1,0 +1,208 @@
+:root {
+    --ebci3-dark: #000000;
+    --ebci3-primary: #0f294d;
+    --ebci3-secondary:#165dc0;
+    --ebci3-gray: #cccccc;
+    --ebci3-contact-text: #ffffff;
+    --ebci3-container-shadow: 0px 3px 12px 2px var(--ebci3-primary);
+    --ebci3-space-xs: .4rem;
+    --ebci3-space-sm: .8rem;
+    --ebci3-space-md: 1.2rem;
+    --ebci3-space-lg: 2rem;
+    --ebci3-space-xl: 3rem;
+
+    --fs-sm: .85rem;
+    --fs-md: 1.1rem;
+
+}
+
+
+body {
+
+    direction: rtl;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.ebci3-contact {
+    width: 100%;
+    background-color: color-mix(in srgb, var(--ebci3-primary) 5%, var(--ebci3-contact-text));
+
+    padding-block: var(--ebci3-space-lg);
+
+    opacity: 0;
+    transform: translateY(80px);
+}
+
+.ebci3-contact.show {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 1.2s ease;
+}
+
+.ebci3-contact-container {
+
+    width: calc(100vw - 1em);
+    max-width: 480px;
+    margin: 0 auto;
+    position: relative;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0px;
+}
+
+.ebci3-contact-cards-wrapper {
+    background-color: var(--ebci3-primary);
+    width: 90%;
+
+    border-radius: 1.5em;
+    box-shadow: var(--ebci3-container-shadow);
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: var(--ebci3-space-md);
+
+    padding: var(--ebci3-space-lg);
+    position: relative;
+    z-index: 10;
+}
+
+.ebci3-contact-section-title {
+    font-size: clamp(1.2rem, 2.5vw, 2rem);
+    font-weight: 900;
+    color: var(--ebci3-contact-text);
+    width: fit-content;
+    margin: 0 auto;
+
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+
+.ebci3-contact-section-title.show {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 1s ease;
+}
+
+.ebci3-contact-cards {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--ebci3-space-md);
+    width: 100%;
+}
+
+.ebci3-contact-item {
+    color: var(--ebci3-contact-text);
+    width: 100%;
+    padding: var(--ebci3-space-md) var(--ebci3-space-sm);
+    border: 1px solid var(--ebci3-contact-text);
+
+    border-radius: 0.75em;
+    margin: 0;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    gap: var(--ebci3-space-xs);
+
+    opacity: 0;
+    transform: translateX(-40px);
+}
+
+.ebci3-contact-item.show {
+    opacity: 1;
+    transform: translateX(0);
+    transition: all 0.7s ease;
+}
+
+/* ==================================== */
+
+.ebci3-contact-item-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: var(--ebci3-space-xs);
+}
+
+
+.ebci3-contact-item-title {
+    color: var(--ebci3-contact-text);
+    font-size: clamp(1rem, 3.5vw, 1.1rem);
+    font-weight: 700;
+}
+
+.ebci3-contact-item-text {
+    color: var(--ebci3-contact-text);
+    font-size: var(--fs-sm);
+    font-weight: 700;
+    line-height: 1.7;
+}
+
+.ebci3-contact-icon {
+    width: 50px;
+    height: 50px;
+
+    background-color: var(--ebci3-secondary);
+    color: var(--ebci3-contact-text);
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ================================== */
+
+.ebci3-contact-social {
+
+    background: var(--ebci3-secondary);
+    width: 15%;
+    text-align: start;
+
+    padding: var(--ebci3-space-sm);
+    z-index: 1;
+    border-radius: 10px;
+    /* transform: translateX(-8%); */
+    box-shadow: var(--ebci3-container-shadow);
+
+}
+
+
+.ebci3-contact-social li {
+    color: var(--ebci3-contact-text);
+    font-size: clamp(1.8em, 2.5vw, 2em);
+    width: 100%;
+}
+
+.ebci3-contact-list-unstyled li a{
+    cursor: pointer;
+}
+.ebci3-contact-list-unstyled {
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--ebci3-space-lg);
+}

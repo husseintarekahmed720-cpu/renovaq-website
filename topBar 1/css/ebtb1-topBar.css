@@ -1,0 +1,118 @@
+:root {
+    --ebtb1-white: #ffffff;
+    --ebtb1-dark: #000000;
+    --ebtb1-primary: #165dc0;
+    --ebtb1-secondary:#0f294d;
+    --ebtb1-gray: #cccccc;
+    --ebtb1-icon-shadow: 0 0 15px var(--ebtb1-gray);
+
+    /* ===== SPACING ===== */
+    --ebtb1-space-xs: .4rem;
+    --ebtb1-space-sm: .8rem;
+
+    /* ===== FONT SCALE ===== */
+    --ebtb1-fs-lg: 1.125rem;
+    --ebtb1-fs-xl: 1.6rem;
+
+    /* ===== TRANSITION ===== */
+    --ebtb1-transition: .35s cubic-bezier(.4, 0, .2, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+    direction: rtl;
+}
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    border: none;
+    background-color: inherit;
+}
+
+.ebtb1-top-bar {
+    color: var(--ebtb1-dark);
+    text-align: center;
+    background-color: var(--ebtb1-secondary);
+
+}
+
+.ebtb1-top-bar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-block: var(--ebtb1-space-xs);
+}
+
+
+
+.ebtb1-social-icons-top-bar {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: var(--ebtb1-space-xs);
+}
+
+.ebtb1-social-icons-top-bar a {
+    text-decoration: none;
+}
+
+.ebtb1-social-icon-top-bar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: var(--ebtb1-icon-shadow);
+    padding: 10px;
+    border-radius: 50%;
+    background-color: var(--ebtb1-white);
+    color: var(--ebtb1-dark);
+    font-size: var(--ebtb1-fs-lg);
+    font-weight: bold;
+}
+
+.ebtb1-social-icon-top-bar .fa-whatsapp {
+    font-size: var(--ebtb1-fs-lg);
+    font-weight: bold;
+}
+
+.ebtb1-social-icon-top-bar .fa-instagram {
+    font-size: var(--ebtb1-fs-lg);
+    font-weight: bold;
+}
+
+
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+
+
+
+@media (max-width: 1440px) {
+    .ebtb1-top-bar-container {
+        padding-inline: var(--ebtb1-space-sm);
+    }
+}
+
+@media (max-width: 760px) {
+
+    .ebtb1-top-bar {
+        height: auto;
+        text-align: center;
+    }
+
+    .ebtb1-social-icon-top-bar {
+        font-size: 18px;
+        font-weight: bold;
+    }
+}

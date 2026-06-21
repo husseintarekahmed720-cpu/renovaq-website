@@ -1,0 +1,126 @@
+:root {
+
+    --ebctad1-whatsapp-color: #25D366;
+    --ebctad1-call-color: #1877F2;
+
+    --ebctad1-primary:#0f294d;
+    --ebctad1-secondary:#165dc0;
+    --ebctad1-ctad-white: #ffffff;
+
+
+    --ebctad1-space-xs: .4rem;
+    --ebctad1-space-sm: .8rem;
+    --ebctad1-space-lg: 2rem;
+    --ebctad1-fs-lg: 1.125rem;
+
+    --ebctad1-br-md: 10px;
+    --ebctad1-br-lg: 50px;
+    --ebctad1-transition: .35s cubic-bezier(.4, 0, .2, 1);
+}
+
+body {
+
+    direction: rtl;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--ebctad1-space-lg);
+}
+
+.ebctad1-floating-icons {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--ebctad1-space-sm);
+    z-index: 1000;
+
+    animation: popIn 0.6s cubic-bezier(0.17, 0.67, 0.83, 0.67) forwards;
+    animation-delay: 0.2s;
+}
+
+@keyframes popIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    70% {
+        transform: scale(1.05);
+        /* تأثير ارتداد خفيف لجعلها حيوية */
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.ebctad1-floating-icons a {
+    width: 80px;
+    height: 80px;
+    padding: var(--ebctad1-space-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--ebctad1-space-xs);
+    align-items: center;
+    justify-content: center;
+
+    border-radius: var(--ebctad1-br-md);
+    color: var(--ebctad1-ctad-white);
+    font-size: var(--ebctad1-fs-lg);
+
+    text-decoration: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    overflow: hidden;
+}
+
+
+.ebctad1-floating-icons .ebctad1-phone-icon {
+    background-color: var(--ebctad1-call-color);
+}
+
+.ebctad1-floating-icons .ebctad1-whatsapp-icon {
+    background-color: var(--ebctad1-whatsapp-color);
+}
+
+.ebctad1-floating-icons .fa-whatsapp {
+    font-size: 35px;
+}
+
+.ebctad1-floating-icons .fa-phone {
+    font-size: 25px;
+}
+
+
+.ebctad1-floating-icons a:hover {
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+
+    .ebctad1-floating-icons {
+        left: 10px;
+        bottom: 10px;
+    }
+
+
+}
