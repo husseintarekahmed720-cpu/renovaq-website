@@ -1,0 +1,38 @@
+.EN{
+    direction: ltr;
+}
+.ebfq3-question-text-en{
+    text-align: left;
+}
+
+.ebci3-contact-item-en{
+    /* justify-content: end;
+    flex-direction: row-reverse; */
+    direction: ltr;
+}
+.ebci3-contact-section-title{
+    direction: ltr;
+    text-align: left;
+}
+
+.ebftr1-footer-title.ebftr1-footer-title-en::after {
+   
+    bottom: 0;
+    left: 0;
+    
+   
+}
+
+.ebci3-contact-social .ebci3-contact-social-en{
+
+  
+    text-align: end;
+  
+}
+@media (max-width: 768px) {
+   
+   .ebftr1-footer-title.ebftr1-footer-title-en::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}

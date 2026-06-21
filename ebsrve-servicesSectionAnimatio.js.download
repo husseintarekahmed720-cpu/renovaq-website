@@ -1,0 +1,26 @@
+document.addEventListener('DOMContentLoaded', () => {
+    // نحدد العناصر التي نريد مراقبتها (كروت الخدمات)
+    const cards = document.querySelectorAll('.ebsrv3-service-card');
+
+    const observerOptions = {
+        root: null, // نراقب بالنسبة لمنطقة العرض (Viewport)
+        threshold: 0.15, // التأثير يبدأ عندما يظهر 15% من الكارت
+        rootMargin: "0px"
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // إضافة الكلاس المسؤول عن حركة الظهور
+                entry.target.classList.add('reveal');
+                // نوقف المراقبة لهذا العنصر بمجرد ظهوره لمرة واحدة
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    // تفعيل المراقب على كل كارت
+    cards.forEach(card => {
+        observer.observe(card);
+    });
+});

@@ -1,0 +1,351 @@
+@import url('https://fonts.googleapis.com/css2?family=El+Messiri:wght@400..700&display=swap');
+
+:root {
+    --ebpt1-dark: #000000;
+    --ebpt1-white: #ffffff;
+    --ebpt1-primary:#0f294d;
+    --ebpt1-secondary:#165dc0;
+
+    --ebpt1-container-width: 1440px;
+
+    --ebpt1-space-xs: .4rem;
+    --ebpt1-space-sm: .8rem;
+    --ebpt1-space-md: 1.2rem;/* تنسيق القسم الخارجي */
+.ebpt1-why-us-sec {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--ebpt1-space-lg);
+    width: 100%;
+    padding-block: var(--ebpt1-space-md);
+    /* خلفية متناسبة لظهور التظليل، مأخوذة من المتغيرات عبر color-mix */
+    background-color: color-mix(in srgb, var(--ebpt1-primary) 5%, var(--ebpt1-white));
+}
+
+/* الحاوية بنظام Flex للمسافات المتناظرة */
+.ebpt1-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+
+    gap: var(--ebpt1-space-md);
+    max-width: var(--ebpt1-container-width);
+    width: calc(100vw - 2em);
+    margin: 0 auto;
+    padding: 0 var(--ebpt1-space-md);
+}
+
+/* الكارت الأساسي وتأثير النيومورفيزم Neumorphism */
+.ebpt1-card {
+    position: relative;
+    width: 320px;
+    /* height: 100%; */
+    border-radius: 15px;
+    transition: var(--ebpt1-transition);
+    padding: var(--ebpt1-space-xs);
+
+    box-shadow:
+        inset 5px 5px 5px color-mix(in srgb, var(--ebpt1-dark) 15%, transparent),
+        inset -5px -5px 5px color-mix(in srgb, var(--ebpt1-white) 40%, transparent),
+        5px 5px 5px color-mix(in srgb, var(--ebpt1-dark) 5%, transparent),
+        -5px -5px 5px color-mix(in srgb, var(--ebpt1-white) 50%, transparent);
+}
+
+.ebpt1-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--ebpt1-space-md);
+}
+
+/* العنوان الرئيسي وكلمة التمييز */
+.ebpt1-title {
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-weight: bold;
+    color: var(--ebpt1-secondary);
+}
+
+.ebpt1-title-highlight {
+    color: var(--ebpt1-primary);
+}
+
+/* الخط السفلي الأنيق للعنوان (بدون الأيقونة الداخلية) */
+.ebpt1-underline {
+    width: 80px;
+    height: 2px;
+    background-color: var(--ebpt1-secondary);
+    position: relative;
+}
+
+
+/* الصندوق الداخلي للكارت */
+.ebpt1-card-box {
+    background: var(--ebpt1-white);
+    box-shadow: 0 10px 20px color-mix(in srgb, var(--ebpt1-dark) 10%, transparent);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    height: 100%;
+}
+
+.ebpt1-card-num {
+    position: absolute;
+    top: 0px;
+    right: 30px;
+    font-size: 8em;
+    font-weight: 700;
+    /* درجة رمادي خفيفة مستنتجة من الـ dark الخاص بك */
+    color: color-mix(in srgb, var(--ebpt1-dark) 6%, transparent);
+    transition: 0.6s;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* تأثير التمرير للرقم الخلفي بلون الشركة الثانوي */
+.ebpt1-card:hover .ebpt1-card-num {
+    color: color-mix(in srgb, var(--ebpt1-secondary) 15%, transparent);
+}
+
+/* حاوية المحتوى بنظام Flex لتحكم تام بالمسافات الداخلية بـ Gap */
+.ebpt1-card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--ebpt1-space-xs);
+    text-align: center;
+    padding: var(--ebpt1-space-sm);
+    z-index: 1;
+    height: 100%;
+}
+
+/* العناوين داخل البطاقة */
+.ebpt1-card-title {
+    font-size: var(--ebpt1-fs-lg);
+    color: var(--ebpt1-primary);
+    font-weight: 700;
+    transition: var(--ebpt1-transition);
+}
+
+/* الفقرات الوصفية */
+.ebpt1-card-desc {
+    font-size: var(--ebpt1-fs-md);
+    color: var(--ebpt1-primary);
+    font-weight: 350;
+    line-height: 1.5;
+    transition: var(--ebpt1-transition);
+}
+
+/* زر التفاعل (اقرأ المزيد) */
+.ebpt1-card-btn {
+    display: inline-flex;
+    padding: var(--ebpt1-space-sm) var(--ebpt1-space-lg);
+    background: var(--ebpt1-primary);
+    color: var(--ebpt1-white);
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 500;
+    box-shadow: 0 10px 20px color-mix(in srgb, var(--ebpt1-dark) 20%, transparent);
+    transition: var(--ebpt1-transition);
+}
+
+/* تأثير التمرير على الزر */
+.ebpt1-card:hover .ebpt1-card-btn {
+    background: var(--ebpt1-secondary);
+}
+
+@media (max-width:320px) {
+    /* .ebpt1-card {
+        position: relative;
+        width: 285px;
+        height: 350px;
+    } */
+}
+    --ebpt1-space-lg: 2rem;
+    --ebpt1-space-xl: 3rem;
+
+    --ebpt1-fs-md: 1.1rem;
+    --ebpt1-fs-xl: 1.6rem;
+
+    --ebpt1-transition: .35s cubic-bezier(.4, 0, .2, 1);
+}
+
+
+body {
+
+    direction: rtl;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* تنسيق القسم الخارجي */
+.ebpt1-why-us-sec {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--ebpt1-space-lg);
+    width: 100%;
+    padding-block: var(--ebpt1-space-md);
+    /* خلفية متناسبة لظهور التظليل، مأخوذة من المتغيرات عبر color-mix */
+    background-color: color-mix(in srgb, var(--ebpt1-primary) 5%, var(--ebpt1-white));
+}
+
+/* الحاوية بنظام Flex للمسافات المتناظرة */
+.ebpt1-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+
+    gap: var(--ebpt1-space-md);
+    max-width: var(--ebpt1-container-width);
+    width: calc(100vw - 2em);
+    margin: 0 auto;
+    padding: 0 var(--ebpt1-space-md);
+}
+
+/* الكارت الأساسي وتأثير النيومورفيزم Neumorphism */
+.ebpt1-card {
+    position: relative;
+    width: 320px;
+    /* height: 100%; */
+    border-radius: 15px;
+    transition: var(--ebpt1-transition);
+    padding: var(--ebpt1-space-xs);
+
+    box-shadow:
+        inset 5px 5px 5px color-mix(in srgb, var(--ebpt1-dark) 15%, transparent),
+        inset -5px -5px 5px color-mix(in srgb, var(--ebpt1-white) 40%, transparent),
+        5px 5px 5px color-mix(in srgb, var(--ebpt1-dark) 5%, transparent),
+        -5px -5px 5px color-mix(in srgb, var(--ebpt1-white) 50%, transparent);
+}
+
+.ebpt1-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--ebpt1-space-md);
+}
+
+/* العنوان الرئيسي وكلمة التمييز */
+.ebpt1-title {
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-weight: bold;
+    color: var(--ebpt1-secondary);
+}
+
+.ebpt1-title-highlight {
+    color: var(--ebpt1-primary);
+}
+
+/* الخط السفلي الأنيق للعنوان (بدون الأيقونة الداخلية) */
+.ebpt1-underline {
+    width: 80px;
+    height: 2px;
+    background-color: var(--ebpt1-secondary);
+    position: relative;
+}
+
+
+/* الصندوق الداخلي للكارت */
+.ebpt1-card-box {
+    background: var(--ebpt1-white);
+    box-shadow: 0 10px 20px color-mix(in srgb, var(--ebpt1-dark) 10%, transparent);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    height: 100%;
+}
+
+.ebpt1-card-num {
+    position: absolute;
+    top: 0px;
+    right: 30px;
+    font-size: 8em;
+    font-weight: 700;
+    /* درجة رمادي خفيفة مستنتجة من الـ dark الخاص بك */
+    color: color-mix(in srgb, var(--ebpt1-dark) 6%, transparent);
+    transition: 0.6s;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* تأثير التمرير للرقم الخلفي بلون الشركة الثانوي */
+.ebpt1-card:hover .ebpt1-card-num {
+    color: color-mix(in srgb, var(--ebpt1-secondary) 15%, transparent);
+}
+
+/* حاوية المحتوى بنظام Flex لتحكم تام بالمسافات الداخلية بـ Gap */
+.ebpt1-card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--ebpt1-space-xs);
+    text-align: center;
+    padding: var(--ebpt1-space-sm);
+    z-index: 1;
+    height: 100%;
+}
+
+/* العناوين داخل البطاقة */
+.ebpt1-card-title {
+    font-size: var(--ebpt1-fs-lg);
+    color: var(--ebpt1-primary);
+    font-weight: 700;
+    transition: var(--ebpt1-transition);
+}
+
+/* الفقرات الوصفية */
+.ebpt1-card-desc {
+    font-size: var(--ebpt1-fs-md);
+    color: var(--ebpt1-primary);
+    font-weight: 350;
+    line-height: 1.5;
+    transition: var(--ebpt1-transition);
+}
+
+/* زر التفاعل (اقرأ المزيد) */
+.ebpt1-card-btn {
+    display: inline-flex;
+    padding: var(--ebpt1-space-sm) var(--ebpt1-space-lg);
+    background: var(--ebpt1-primary);
+    color: var(--ebpt1-white);
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 500;
+    box-shadow: 0 10px 20px color-mix(in srgb, var(--ebpt1-dark) 20%, transparent);
+    transition: var(--ebpt1-transition);
+}
+
+/* تأثير التمرير على الزر */
+.ebpt1-card:hover .ebpt1-card-btn {
+    background: var(--ebpt1-secondary);
+}
+
+@media (max-width:320px) {
+    /* .ebpt1-card {
+        position: relative;
+        width: 285px;
+        height: 350px;
+    } */
+}

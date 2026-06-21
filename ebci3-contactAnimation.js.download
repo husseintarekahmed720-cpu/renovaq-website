@@ -1,0 +1,41 @@
+document.addEventListener("DOMContentLoaded", function () {
+    const ebci1Section = document.querySelector(".ebci3-contact");
+    const ebci1Title = document.querySelector(".ebci3-contact-section-title");
+    const ebci1Cards = document.querySelectorAll(".ebci3-contact-item");
+  
+    const ebci1Observer = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            /* show section */
+  
+            ebci1Section.classList.add("show");
+  
+            /* show title */
+  
+            setTimeout(() => {
+              ebci1Title.classList.add("show");
+            }, 400);
+  
+            /* stagger cards animation */
+  
+            ebci1Cards.forEach((card, index) => {
+              setTimeout(() => {
+                card.classList.add("show");
+              }, 800 + index * 1000);
+            });
+  
+            /* run only once */
+  
+            observer.unobserve(ebci1Section);
+          }
+        });
+      },
+      {
+        threshold: 0.35,
+      }
+    );
+  
+    ebci1Observer.observe(ebci1Section);
+  });
+  
