@@ -1,0 +1,16 @@
+backend:
+  name: github
+  repo: husseintarekahmed720-cpu/renovaq-website
+  branch: main
+
+media_folder: img
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+      - label: "Home"
+        name: "home"
+        file: "index.html"
+        fields:
+          - {label: "Body", name: "body", widget: "markdown"}
